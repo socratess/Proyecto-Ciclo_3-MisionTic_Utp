@@ -1,0 +1,37 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.RegistrarVeterinariosModel
+@{
+}
+<h2>Registrar Veterinarios</h2>
+<div id="forms">
+    <form class="row g-3 needs-validation" method="post">
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label" asp-for="veterinario.Nombres"></label>
+            <input type="text" class="form-control" id="validationTooltip01" asp-for="veterinario.Nombres">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label" asp-for="veterinario.Apellidos"></label>
+            <input type="text" class="form-control" id="validationTooltip02" asp-for="veterinario.Apellidos">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip03" class="form-label" asp-for="veterinario.Direccion"></label>
+            <input type="text" class="form-control" id="validationTooltip03" asp-for="veterinario.Direccion">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip04" class="form-label" asp-for="veterinario.Telefono"></label>
+            <input type="text" class="form-control" id="validationTooltip04" asp-for="veterinario.Telefono">
+        </div>
+
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip05" class="form-label" asp-for="veterinario.TarjetaProfesional"></label>
+            <input type="text" class="form-control" id="validationTooltip05" asp-for="veterinario.TarjetaProfesional">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Registrar Veterinario</button>
+        </div>
+    </form>
+</div>
+
+<div>
+<a asp-page="./ListaVeterinarios" class="btn-default">Lista de Veterinario</a>
+   </div>

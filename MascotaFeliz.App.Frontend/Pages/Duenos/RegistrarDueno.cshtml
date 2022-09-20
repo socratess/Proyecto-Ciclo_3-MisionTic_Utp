@@ -1,0 +1,37 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.RegistrarDuenoModel
+@{
+}
+<h2>Registrar Propietarios</h2>
+<div id="forms">
+    <form class="row g-3 needs-validation" method="post">
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label" asp-for="dueno.Nombres"></label>
+            <input type="text" class="form-control" id="validationTooltip01" asp-for="dueno.Nombres">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label" asp-for="dueno.Apellidos"></label>
+            <input type="text" class="form-control" id="validationTooltip02" asp-for="dueno.Apellidos">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip03" class="form-label" asp-for="dueno.Direccion"></label>
+            <input type="text" class="form-control" id="validationTooltip03" asp-for="dueno.Direccion">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip04" class="form-label" asp-for="dueno.Telefono"></label>
+            <input type="text" class="form-control" id="validationTooltip04" asp-for="dueno.Telefono">
+        </div>
+
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip05" class="form-label" asp-for="dueno.Correo"></label>
+            <input type="text" class="form-control" id="validationTooltip05" asp-for="dueno.Correo">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Registrar Propietario</button>
+        </div>
+    </form>
+</div>
+
+<div>
+<a asp-page="./ListaDuenos" class="btn-default">Lista de Propietarios</a>
+   </div>

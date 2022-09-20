@@ -1,0 +1,31 @@
+#accordionExample {
+   max-width: 800px;
+    margin: 150px auto;
+}
+#carouselExampleInterval{
+  max-width: 800px;
+    margin: 150px auto;   
+}
+
+.texto{
+
+    text-align: center;
+}
+
+.breadcrumb{
+  margin: 80px auto;
+}
+#forms{
+  max-width: 2000px;
+  padding: 50px;
+  margin: 250px auto;
+}
+#buscador{
+  margin: 100px auto;
+  padding: 10px; 
+  height: 40px;
+  width: 500px; 
+}
+#index-tables{
+  margin: 150px auto;
+}

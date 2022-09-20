@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--Required meta tags-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Trabajo final ciclo 3">
+    <meta name="author" content="Socrates Palacios Moreno">
+    <meta name="Keywords" content="Mascotas,Dueño,Veterinario,VisitasPyP,HistoriaClinica">
+
+<!-----Bootstrap Css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+ >
+</script>
+<script> 
+$(function(){
+$("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+    <title>Registro De Veterinario</title>
+</head>
+<body>
+    <div id="header"></div>
+     <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Registrar Veterinario</li>
+  </ol>
+</nav>
+</div> 
+<div id="forms">
+  <form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip01" class="form-label">Id Veterinario</label>
+    <input type="text" class="form-control" id="validationTooltip01" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Nombres</label>
+    <input type="text" class="form-control" id="validationTooltip02" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+<div class="col-md-3 position-relative">
+    <label for="validationTooltip03" class="form-label">Apellidos</label>
+    <input type="text" class="form-control" id="validationTooltip03" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-5 position-relative">
+    <label for="validationTooltip04" class="form-label">Dirección</label>
+    <input type="text" class="form-control" id="validationTooltip04" required>
+    <div class="invalid-tooltip">
+      Ingresar dirección valida.
+    </div>
+  </div>
+ 
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip05" class="form-label">Teléfono</label>
+    <input type="text" class="form-control" id="validationTooltip05" required>
+    <div class="invalid-tooltip">
+      Ingresar teléfono valido.
+    </div>
+  </div>
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip06" class="form-label">Tarjeta Profesional</label>
+    <input type="text" class="form-control" id="validationTooltip06" required>
+    <div class="invalid-tooltip">
+      Ingresar Tarjeta profesional valida.
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Envíar Datos</button>
+  </div>
+</form>
+</div>
+
+
+<div id="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

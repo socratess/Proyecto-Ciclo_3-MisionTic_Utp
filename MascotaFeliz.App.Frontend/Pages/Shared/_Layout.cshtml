@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicación Mascota Feliz</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <i class="bi bi-7-square"></i>
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="https://img.icons8.com/laces/64/000000/home.png" alt="Mascota Feliz Icon" width="45px" height="45px" ></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLinkveterinario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Veterinario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkveterinario">
+            <li><a class="dropdown-item"  asp-area="" asp-page="/Veterinarios/RegistrarVeterinarios">Registrar Veterinario</a></li>
+             <li><div class="dropdown-divider"></div></li>
+            <li><a class="dropdown-item"  asp-area="" asp-page="/Veterinarios/UnVeterinario">Consulta De Un Veterinario</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Veterinarios/ListaVeterinarios">Consulta Listado De Todos Los Veterinario</a></li>
+          </ul>
+        </li>
+
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLinkvdueno" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Propietario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkvdueno">
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/RegistrarDueno">Registrar Propietario</a></li>
+             <li><div class="dropdown-divider"></div></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/UnDueno">Consulta De Un Propietario</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/ListaDuenos">Consulta Listado De Todos Los Propietarios</a></li>
+          </ul>
+        </li>        
+                       
+                        
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLinkMascota" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Mascota
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkMascota">
+            <li><a class="dropdown-item" href="RegistrarMascota.html">Registrar Mascota</a></li>
+             <li><div class="dropdown-divider"></div></li>
+            <li><a class="dropdown-item" href="ConsultarMascota.html">Consulta De Una Mascota</a></li>
+            <li><a class="dropdown-item"  asp-area="" asp-page="/Mascotas/ListaMascotas">Consulta Listado De Todas Las Mascotas</a></li>
+          </ul>
+        </li>
+
+
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLinkAcerca" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Acerca De
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkAcerca">
+            <li><a class="dropdown-item" href="#">Del Proyecto</a></li>
+            <li><a class="dropdown-item" href="#">Del Negocio</a></li>
+            <li><a class="dropdown-item"  asp-area="" asp-page="#">Integrantes Del Equipo</a></li>
+          </ul>
+        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer bg-primary text-center text-white text-lg-start">
+     <div class="container text-center">
+        &copy; 2022 - Proyecto Ciclo 3: - <a class="text-white">MascotaFeliz</a>
+    </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
