@@ -41,8 +41,8 @@ namespace MascotaFeliz.App.Frontend.Pages
             
                 veterinario = _repoVeterinario.UpdateVeterinario(veterinario);
             
-           
-            return Page();
+            return RedirectToPage("/Veterinarios/ListaVeterinarios");
+            //return Page();
         }
     }
 }

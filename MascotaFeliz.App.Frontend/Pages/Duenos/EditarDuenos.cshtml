@@ -3,26 +3,85 @@
 @{
     int duenoId = Model.dueno.Id;
 }
+<script type='text/javascript'>
+function validacion(){
+
+   var valoresCorrectos = true;
+   var mensaje = ""; 
+
+ if (document.getElementById('validationTooltip05').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Correo";
+    }
+
+   if(document.getElementById('validationTooltip04').value.length < 1){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Telefono";
+   }
+
+ 
+    if (document.getElementById('validationTooltip03').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Direccion";
+    }
+
+if(document.getElementById('validationTooltip02').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Apellidos";
+   }
+
+ if(document.getElementById('validationTooltip01').value.length <1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Nombres";
+   }
+
+   if(document.getElementById('validationTooltip06').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Cedula";
+   }
 
 
-<h2>editar Propietario</h2>
-<form method="post">
-<div class="form-group">
-<input type="hidden" asp-for="dueno.Id"/>
-<label asp-for="dueno.Nombres"></label>
-<input asp-for="dueno.Nombres" class="form-control">
-<label asp-for="dueno.Apellidos"></label>
-<input asp-for="dueno.Apellidos" class="form-control">
-<label asp-for="dueno.Direccion"></label>
-<input asp-for="dueno.Direccion" class="form-control">
-<label asp-for="dueno.Telefono"></label>
-<input asp-for="dueno.Telefono" class="form-control">
-<label asp-for="dueno.Correo"></label>
-<input asp-for="dueno.Correo" class="form-control">
+   if(valoresCorrectos == false){
+    alert('Algunos campos no estan correctos, vuelva a ingresarlos, algunos campos son: '+mensjase);
+   }
+   return valoresCorrectos;
+}
+   </script>
 
-<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+<h2 style="text-align: center;">Editar Propietarios</h2>
+<div id="forms">
+    <form class="row g-3 needs-validation" method="post" onsubmit='return validacion()'>
+        <input type="hidden" asp-for="dueno.Id"/>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip06" class="form-label" asp-for="dueno.Cedula"></label>
+            <input type="number" class="form-control" id="validationTooltip06" asp-for="dueno.Cedula">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label" asp-for="dueno.Nombres"></label>
+            <input type="text" class="form-control" id="validationTooltip01" asp-for="dueno.Nombres">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label" asp-for="dueno.Apellidos"></label>
+            <input type="text" class="form-control" id="validationTooltip02" asp-for="dueno.Apellidos">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip03" class="form-label" asp-for="dueno.Direccion"></label>
+            <input type="text" class="form-control" id="validationTooltip03" asp-for="dueno.Direccion">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip04" class="form-label" asp-for="dueno.Telefono"></label>
+            <input type="number" class="form-control" id="validationTooltip04" asp-for="dueno.Telefono">
+        </div>
+
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip05" class="form-label" asp-for="dueno.Correo"></label>
+            <input type="email" class="form-control" id="validationTooltip05" asp-for="dueno.Correo">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Editar Propietario</button>
+        </div>
+    </form>
+<div style="margin-top:30px"><a asp-page="./ListaDuenos" class="btn-default">Lista de Propietarios</a></div>    
 </div>
-</form>
-    
 
-<a asp-page="./ListaDuenos" class="btn-default">Lista de Propietarios</a>
+

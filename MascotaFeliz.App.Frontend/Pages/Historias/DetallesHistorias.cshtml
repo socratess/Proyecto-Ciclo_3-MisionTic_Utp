@@ -1,0 +1,30 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesHistoriasModel
+@{
+}
+<table class="table table-hover">
+  <thead>
+
+    <th class="text-center" colspan="2">Detalles Del Propietario</th>
+
+
+  </thead>
+  <tbody>
+    <tr>
+      <th>Id de la Historia</th>
+      <td>@Model.historia.Id</td>
+    </tr>
+      <tr>
+      <th>Fecha de inicio de la Historia</th>
+      <td>@Model.historia.FechaInicial</td>
+    </tr>
+    <tr>
+      <th>Visitas P y P</th>
+      <td> @foreach (var vis in @Model.historia.VisitasPyP){
+      <p>Código Visita: @vis.Id</p>
+      }</td>
+    </tr>
+  </tbody>
+</table>
+
+<a asp-page="/Mascotas/ListaMascotas" class="btn-default">Listado De Todos Las Mascotas</a>

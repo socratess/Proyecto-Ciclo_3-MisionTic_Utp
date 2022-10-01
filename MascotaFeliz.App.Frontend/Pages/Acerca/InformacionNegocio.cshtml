@@ -2,3 +2,50 @@
 @model MascotaFeliz.App.Frontend.Pages.InformacionNegocioModel
 @{
 }
+ <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Acerca</li>
+    <li class="breadcrumb-item active" aria-current="page">De Contactarnos</li>
+  </ol>
+</nav>
+</div> 
+
+<style>
+    .ContainerContacto {
+        margin:40px;
+ padding: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex; /* propiedad flexbox */
+  justify-content: center; /* centra el contenido horizontalmmente */
+  align-items: center; /* centra el contenido verticalmente */
+}
+</style>
+
+<div class="ContainerContacto"></div>
+<div class="row">
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Whatsapp</h5>
+        <p class="card-text">Contacta con nosotros tu veterinaria con servicio a domicilio por medio de whatsapp.</p>
+        <a href="https://wa.me/570000000000/?text=Hola estimado propietario(a) de mascota(s), %20para nosotros es un gusto%20poder contactar con usted." target="_blank" class="btn btn-primary"><img src="https://img.icons8.com/color/48/000000/whatsapp--v6.png"/></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">E-mail/Correo Electrónico</h5>
+        <p class="card-text">Contacta con nosotros tu veterinaria con servicio a domicilio por medio de E-mail/Correo Electrónico.</p>
+        <a href="mailto:MascotaFeliz2000@mailnovalido.com?Subject=Me gustaría %20conocer%20más sobre %20el servicio a domicilio %20y como agendar una cita." class="btn btn-primary"><img src="https://img.icons8.com/emoji/48/000000/e-mail.png"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+<div>
+  <p style="text-align: center;">  <strong>Nota: </strong>El <strong>número de whatsapp</strong> y el <strong>e-mail/correo electrónico</strong> son fictios/unos ejemplos</p>
+</div>

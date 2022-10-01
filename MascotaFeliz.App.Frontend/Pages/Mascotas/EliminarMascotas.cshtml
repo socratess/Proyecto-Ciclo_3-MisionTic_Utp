@@ -1,0 +1,51 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EliminarMascotasModel
+@{
+}
+<table class="table table-hover">
+  <thead>
+
+    <th class="text-center" colspan="2">Detalles De La Mascota Eliminada</th>
+
+
+  </thead>
+  <tbody>
+    <tr>
+      <th>Id del Propietario</th>
+      <td>@Model.mascota.Id</td>
+    </tr>
+     <tr>
+      <th>Nombre</th>
+      <td>@Model.mascota.Nombre</td>
+    </tr>
+    <tr>
+      <th>Color</th>
+      <td>@Model.mascota.Color</td>
+    </tr>
+    <tr>
+      <th>Especie</th>
+      <td>@Model.mascota.Especie</td>
+    </tr>
+    <tr>
+      <th>Raza</th>
+      <td>@Model.mascota.Raza</td>
+    </tr>
+    <tr>
+      <th>dueno</th>
+      <td>@Model.mascota.dueno.Nombres @Model.mascota.dueno.Apellidos</td>
+    </tr>
+    <tr>
+
+      <th>veterinario</th>
+      <td>@Model.mascota.veterinario.Nombres @Model.mascota.veterinario.Apellidos</td>
+    </tr>
+     <tr>
+
+      <th>historia</th>
+      <td>@Model.mascota.historia.Id</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a asp-page="./ListaMascotas" class="btn-default">Listado De Todos Las Mascotas</a>

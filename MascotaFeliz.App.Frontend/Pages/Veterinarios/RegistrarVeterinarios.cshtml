@@ -2,9 +2,67 @@
 @model MascotaFeliz.App.Frontend.Pages.RegistrarVeterinariosModel
 @{
 }
-<h2>Registrar Veterinarios</h2>
+ <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Veterinario</li>
+    <li class="breadcrumb-item active" aria-current="page">Registrar Veterinario</li>
+  </ol>
+</nav>
+</div> 
+   <script type='text/javascript'>
+function validacion(){
+
+   var valoresCorrectos = true;
+   var mensaje = ""; 
+
+ if (document.getElementById('validationTooltip05').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Tarjeta Profesional";
+    }
+
+   if(document.getElementById('validationTooltip04').value.length < 1){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Telefono";
+   }
+
+ 
+    if (document.getElementById('validationTooltip03').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Direccion";
+    }
+
+if(document.getElementById('validationTooltip02').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Apellidos";
+   }
+
+ if(document.getElementById('validationTooltip01').value.length <1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Nombres";
+   }
+
+   if(document.getElementById('validationTooltip06').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+"Cedula";
+   }
+
+
+   if(valoresCorrectos == false){
+    alert('Algunos campos no estan correctos, vuelva a ingresarlos, algunos campos son: '+mensjase);
+   }
+   return valoresCorrectos;
+}
+   </script>
+
+<h2 style="text-align: center;">Registrar Veterinario</h2>
 <div id="forms">
-    <form class="row g-3 needs-validation" method="post">
+    <form class="row g-3 needs-validation" method="post" onsubmit='return validacion()'>
+          <div class="col-md-4 position-relative">
+            <label for="validationTooltip06" class="form-label" asp-for="veterinario.Cedula"></label>
+            <input type="number" class="form-control" id="validationTooltip06" asp-for="veterinario.Cedula">
+        </div>
         <div class="col-md-4 position-relative">
             <label for="validationTooltip01" class="form-label" asp-for="veterinario.Nombres"></label>
             <input type="text" class="form-control" id="validationTooltip01" asp-for="veterinario.Nombres">
@@ -19,7 +77,7 @@
         </div>
         <div class="col-md-4 position-relative">
             <label for="validationTooltip04" class="form-label" asp-for="veterinario.Telefono"></label>
-            <input type="text" class="form-control" id="validationTooltip04" asp-for="veterinario.Telefono">
+            <input type="number" class="form-control" id="validationTooltip04" asp-for="veterinario.Telefono">
         </div>
 
         <div class="col-md-4 position-relative">
@@ -31,7 +89,7 @@
         </div>
     </form>
 </div>
+</div>
 
-<div>
-<a asp-page="./ListaVeterinarios" class="btn-default">Lista de Veterinario</a>
-   </div>
+
+

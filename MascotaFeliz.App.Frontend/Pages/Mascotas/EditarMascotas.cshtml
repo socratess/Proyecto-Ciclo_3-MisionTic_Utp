@@ -1,0 +1,105 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditarMascotasModel
+@{
+       
+}
+
+<h2 style="text-align: center;">Editar Mascota</h2>
+
+<script type='text/javascript'>
+  function validacion() {
+
+    var valoresCorrectos = true;
+    var mensaje = "";
+
+  if (document.getElementById('veterinario').value == 0) {
+      valoresCorrectos = false;
+  mensjase = mensaje + " Veterinario";
+    }
+
+    if (document.getElementById('dueno').value==0) {
+      valoresCorrectos = false;
+      mensjase = mensaje + " Propietario";
+    }
+
+
+    if (document.getElementById('validationTooltip03').value.length < 1) {
+      valoresCorrectos = false;
+      mensjase = mensaje + " Raza";
+    }
+
+    if (document.getElementById('validationTooltip02').value.length < 1) {
+      valoresCorrectos = false;
+      mensjase = mensaje + " Color";
+    }
+
+    if (document.getElementById('validationTooltip01').value.length < 1) {
+      valoresCorrectos = false;
+      mensjase = mensaje + " Especie";
+    }
+
+    if (document.getElementById('validationTooltip06').value.length < 1) {
+      valoresCorrectos = false;
+      mensjase = mensaje + " Nombres";
+    }
+
+
+    if (valoresCorrectos == false) {
+      alert('Algunos campos no estan correctos, vuelva a ingresarlos, algunos campos son: ' + mensjase);
+    }
+    return valoresCorrectos;
+  }
+</script>
+
+<div id="forms">
+    <form class="row g-3 needs-validation" method="post" onsubmit='return validacion()'>
+         <input type="hidden" asp-for = "mascota.Id" />
+          <div class="col-md-4 position-relative">
+            <label for="validationTooltip06" class="form-label" asp-for="mascota.Nombre"></label>
+            <input type="text" class="form-control" id="validationTooltip06" asp-for="mascota.Nombre">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label" asp-for="mascota.Especie"></label>
+            <input type="text" class="form-control" id="validationTooltip01" asp-for="mascota.Especie">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label" asp-for="mascota.Color"></label>
+            <input type="text" class="form-control" id="validationTooltip02" asp-for="mascota.Color">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip03" class="form-label" asp-for="mascota.Raza"></label>
+            <input type="text" class="form-control" id="validationTooltip03" asp-for="mascota.Raza">
+        </div>
+        <div class="col-md-3 position-relative">
+            <label for="dueno" class="form-label">Propietario</label>
+          <select id="dueno" asp-for="mascota.dueno.Id" name="duenoId">
+            <option value="0">Seleccione un Propietario</option>
+                @foreach (var dueno in Model.listaDuenos)
+                {
+                    <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos - Cedula: @dueno.Cedula</option>
+                }
+          </select>
+        </div>
+
+        <div class="col-md-4 position-relative">
+
+           <label for="veterinario" class="form-label">Veterinario</label>
+          <select id="veterinario" asp-for="mascota.veterinario.Id" name="veterinarioId">
+            <option value="0">Seleccione un Propietario</option>
+                @foreach (var veterinario in Model.listaVeterinarios)
+                {
+                    <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos -Tarjeta Profesional: @veterinario.TarjetaProfesional </option>
+                }
+          </select>
+        </div>
+        <div class="col-md-4 position-relative">
+        <div>
+            <p>la <Strong>historia clínica</Strong> no se edita</p>
+        </div>
+</div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Editar Mascota</button>
+        </div>
+    </form>
+      <div style="margin-top:30px"><a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas</a></div>
+</div>

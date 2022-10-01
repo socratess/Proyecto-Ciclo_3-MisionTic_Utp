@@ -1,0 +1,53 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesVisitasModel
+@{
+}
+<table class="table table-hover">
+<thead>
+
+
+
+
+<th class="text-center" colspan="2">Detalles De la Visita</th>
+</thead>
+  <tbody>
+    <tr>
+       <th>Id de la Visita</th>
+        <td>@Model.visitaPyP.Id</td>
+        </tr>
+        <tr>   
+        <th>Fecha Visita</th>
+        <td>@Model.visitaPyP.FechaVisita</td></tr>
+
+        <tr>   
+        <th>Temperatura</th>
+        <td>@Model.visitaPyP.Temperatura</td></tr>
+        
+        <tr>
+          <th>Peso</th>
+        <td>@Model.visitaPyP.Peso</td></tr>
+        
+        <tr>
+          <th>FrecuenciaRespiratoria</th>
+        <td>@Model.visitaPyP.FrecuenciaRespiratoria</td></tr>
+        
+        <tr>
+          <th>FrecuenciaCardiaca</th>
+          <td>@Model.visitaPyP.FrecuenciaCardiaca</td></tr>
+        
+        <tr>
+          <th>EstadoAnimo</th>
+          <td>@Model.visitaPyP.EstadoAnimo</td></tr>
+        
+   
+   <tr>
+          <th>Id Veterinario</th>
+          <td>@Model.visitaPyP.IdVeterinario</td></tr>
+
+          <tr>
+          <th>Recomendaciones</th>
+          <td>@Model.visitaPyP.Recomendaciones</td></tr>
+  </tbody>
+</table>
+
+<a asp-page="./ListaVisitas" class="btn-default">Listado De Todas las visitas</a>

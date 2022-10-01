@@ -2,9 +2,20 @@
 @model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
 @{
 }
-<div>
-<table class="table table-striped">
+  <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Veterinario</li>
+    <li class="breadcrumb-item active" aria-current="page">Consulta De Veterinarios</li>
+  </ol>
+</nav>
+</div> 
+
+<div id="listaveterinario" class="container mt-5">
+<table id="tableVeterinario" class="table table-striped" style="width:100%" >
   <thead>
+   <th>Cedula</th>
      <th>Nombres</th>
      <th>Apellidos</th>
      <th>Direccion</th>
@@ -19,6 +30,7 @@
     @foreach (var veterinario in Model.listaVeterinarios){
 
     <tr>
+       <td>@veterinario.Cedula</td>
         <td>@veterinario.Nombres</td>
         <td>@veterinario.Apellidos</td>
            <td>@veterinario.Direccion</td>
@@ -38,3 +50,7 @@
   </tbody>
 </table>
 </div>
+
+
+
+

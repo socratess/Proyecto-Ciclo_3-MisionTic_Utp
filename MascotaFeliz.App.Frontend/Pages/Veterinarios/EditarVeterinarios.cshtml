@@ -3,24 +3,87 @@
 @{
         int veterinarioId = Model.veterinario.Id;
 }
-<h2>editar Veterinario</h2>
-<form method="post">
-<div class="form-group">
-<input type="hidden" asp-for="veterinario.Id"/>
-<label asp-for="veterinario.Nombres"></label>
-<input asp-for="veterinario.Nombres" class="form-control">
-<label asp-for="veterinario.Apellidos"></label>
-<input asp-for="veterinario.Apellidos" class="form-control">
-<label asp-for="veterinario.Direccion"></label>
-<input asp-for="veterinario.Direccion" class="form-control">
-<label asp-for="veterinario.Telefono"></label>
-<input asp-for="veterinario.Telefono" class="form-control">
-<label asp-for="veterinario.TarjetaProfesional"></label>
-<input asp-for="veterinario.TarjetaProfesional" class="form-control">
+  <script type='text/javascript'>
+function validacion(){
 
-<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+   var valoresCorrectos = true;
+   var mensaje = ""; 
+
+ if (document.getElementById('validationTooltip05').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Tarjeta Profesional";
+    }
+
+   if(document.getElementById('validationTooltip04').value.length < 1){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Telefono";
+   }
+
+ 
+    if (document.getElementById('validationTooltip03').value.length < 1) {
+        valoresCorrectos = false;
+        mensjase = mensaje + " Direccion";
+    }
+
+if(document.getElementById('validationTooltip02').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Apellidos";
+   }
+
+ if(document.getElementById('validationTooltip01').value.length <1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+" Nombres";
+   }
+
+   if(document.getElementById('validationTooltip06').value.length < 1 ){
+    valoresCorrectos = false;
+    mensjase= mensaje+"Cedula";
+   }
+
+
+   if(valoresCorrectos == false){
+    alert('Algunos campos no estan correctos, vuelva a ingresarlos, algunos campos son: '+mensjase);
+   }
+   return valoresCorrectos;
+}
+   </script>
+
+<h2 style="text-align: center;">Editar Veterinario</h2>
+<div id="forms">
+    <form class="row g-3 needs-validation" method="post" onsubmit='return validacion()'>
+        <input type="hidden" asp-for="veterinario.Id"/>
+          <div class="col-md-4 position-relative">
+            <label for="validationTooltip06" class="form-label" asp-for="veterinario.Cedula"></label>
+            <input type="number" class="form-control" id="validationTooltip06" asp-for="veterinario.Cedula">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip01" class="form-label" asp-for="veterinario.Nombres"></label>
+            <input type="text" class="form-control" id="validationTooltip01" asp-for="veterinario.Nombres">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip02" class="form-label" asp-for="veterinario.Apellidos"></label>
+            <input type="text" class="form-control" id="validationTooltip02" asp-for="veterinario.Apellidos">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip03" class="form-label" asp-for="veterinario.Direccion"></label>
+            <input type="text" class="form-control" id="validationTooltip03" asp-for="veterinario.Direccion">
+        </div>
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip04" class="form-label" asp-for="veterinario.Telefono"></label>
+            <input type="number" class="form-control" id="validationTooltip04" asp-for="veterinario.Telefono">
+        </div>
+
+        <div class="col-md-4 position-relative">
+            <label for="validationTooltip05" class="form-label" asp-for="veterinario.TarjetaProfesional"></label>
+            <input type="text" class="form-control" id="validationTooltip05" asp-for="veterinario.TarjetaProfesional">
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Editar Veterinario</button>
+        </div>
+    </form>
+    <div style="margin-top:30px"><a asp-page="./ListaVeterinarios" class="btn-default">Lista de Veterinarios</a></div>    
 </div>
-</form>
-    
 
-<a asp-page="./ListaVeterinarios" class="btn-default">Lista de Veterinarios</a>
+
+
+

@@ -2,21 +2,56 @@
 @model MascotaFeliz.App.Frontend.Pages.ListaMascotasModel
 @{
 }
-<div>
-<table class="table table-striped">
-  <thead>
-     <th>Nombre</th>
-     <th>Color</th>
-     <th>Especie</th>
-     <th>Raza</th>
-     <th>Ver Detalles</th>
-     <th>Editar</th>
-       
-  </thead>
-  <tbody>
-   jjjjj
-  </tbody>
-</table>
-</div>
+  <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Mascota</li>
+    <li class="breadcrumb-item active" aria-current="page">Consulta De Mascotas</li>
+  </ol>
+</nav>
+</div> 
+<div id="listamascota" class="container mt-5">
+   <table id="tableMascota" class="table table-striped" style="width:100%">
+      <thead>
+         
+         <th>Nombre</th>
+         <th>Color</th>
+         <th>Especie</th>
+         <th>Raza</th>
+         <th>Propietario</th>
+         <th>Veterinario</th>
+         <th>Historia</th>
+         <th>Ver Detalles</th>
+         <th>Editar</th>
+         <th>Eliminar</th>
 
-</table>
+      </thead>
+      <tbody>
+         @foreach (var mascota in Model.listaMascota)
+         {
+
+            <tr>
+               <td>@mascota.Nombre</td>
+               <td>@mascota.Color</td>
+               <td>@mascota.Especie</td>
+               <td>@mascota.Raza</td>
+               <td>@mascota.dueno.Nombres @mascota.dueno.Apellidos</td>
+               <td>@mascota.veterinario.Nombres @mascota.veterinario.Apellidos</td>
+               <td>@mascota.historia.Id</td>
+
+
+               <td>
+                     <a class="btn btn-primary table-btn" asp-page="/Mascotas/DetallesMascotas" asp-route-mascotaId="@mascota.Id">Detalle</a>
+               </td>
+               <td>
+                  <a class="btn btn-primary table-btn" asp-page="/Mascotas/EditarMascotas" asp-route-mascotaId="@mascota.Id">Editar</a>
+               </td>
+               <td>
+                  <a class="btn btn-primary table-btn" asp-page="/Mascotas/EliminarMascotas" asp-route-mascotaId="@mascota.Id">Eliminar</a>
+               </td>
+            </tr>
+         }
+      </tbody>
+   </table>
+</div>

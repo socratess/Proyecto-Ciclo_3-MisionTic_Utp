@@ -1,0 +1,44 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVisitasModel
+@{
+}
+ <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Veterinario</li>
+    <li class="breadcrumb-item active" aria-current="page">Consulta De Visitas</li>
+  </ol>
+</nav>
+</div> 
+
+<div id="listaveterinario" class="container mt-5">
+<table id="tableVeterinario" class="table table-striped" style="width:100%" >
+  <thead>
+   <th>Id Visita</th>
+     <th>FechaVisita</th>
+     <th>Id Veterinario</th>
+     <th>Recomendaciones</th>
+     <th>Ver Detalles</th>
+    <th>Editar</th>
+       
+  </thead>
+  <tbody>
+    @foreach (var visitaPyP in Model.listaVisitaPyPs){
+
+    <tr>
+       <td>@visitaPyP.Id</td>
+        <td>@visitaPyP.FechaVisita</td>
+        <td>@visitaPyP.IdVeterinario</td>
+        <td>@visitaPyP.Recomendaciones</td>
+                 <td>
+                        <a class="btn btn-primary table-btn" asp-page="/Visitas/DetallesVisitas" asp-route-visitaPyPId="@visitaPyP.Id">Detalle</a>
+                 </td>
+                   <td>
+                               <a class="btn btn-primary table-btn" asp-page="/Visitas/EliminarVisitas" asp-route-visitaPyPId="@visitaPyP.Id">Eliminar</a>
+                 </td>
+    </tr>
+     }
+  </tbody>
+</table>
+</div>

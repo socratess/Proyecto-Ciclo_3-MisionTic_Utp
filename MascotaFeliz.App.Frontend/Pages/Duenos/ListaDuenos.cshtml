@@ -2,10 +2,21 @@
 @model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
 @{
 }
+  <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Propietario</li>
+    <li class="breadcrumb-item active" aria-current="page">Consulta De Propietarios</li>
+  </ol>
+</nav>
+</div> 
 
-<div>
-<table class="table table-striped">
+
+<div  id="listaDiseno" class="container mt-5">
+<table id="tableDueno" class="table table-striped" style="width:100%">
   <thead>
+   <th>Cedula</th>
      <th>Nombres</th>
      <th>Apellidos</th>
      <th>Direccion</th>
@@ -20,6 +31,7 @@
     @foreach (var dueno in Model.listaDuenos){
 
     <tr>
+      <td>@dueno.Cedula</td>
         <td>@dueno.Nombres</td>
         <td>@dueno.Apellidos</td>
            <td>@dueno.Direccion</td>

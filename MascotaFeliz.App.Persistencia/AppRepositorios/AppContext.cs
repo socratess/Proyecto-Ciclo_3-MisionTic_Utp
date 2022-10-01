@@ -16,8 +16,12 @@ namespace MascotaFeliz.App.Persistencia
         protected override void OnConfiguring(DbContextOptionsBuilder  optionsBuilder){
                if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder
-                .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = MascotaFelizData");
+           //     optionsBuilder
+             //   .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = MascotaFelizData");
+           
+            optionsBuilder
+                .UseSqlServer("Data Source = MascotaFelizdb12.mssql.somee.com; Initial Catalog = MascotaFelizdb12;user id=soc_SQLLogin_1;pwd=iwhe57equ1 ");
+           
             }
 
         }

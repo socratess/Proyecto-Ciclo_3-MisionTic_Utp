@@ -18,11 +18,7 @@ private readonly IRepositorioDueno _repoDueno;
 
 public ListaDuenosModel(){
 this._repoDueno = new RepositorioDueno(new Persistencia.AppContext());
-
-
 }
-
-
         public void OnGet()
         {
             listaDuenos = _repoDueno.GetAllDuenos();

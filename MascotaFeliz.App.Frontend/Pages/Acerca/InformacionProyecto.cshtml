@@ -2,3 +2,47 @@
 @model MascotaFeliz.App.Frontend.Pages.InformacionProyectoModel
 @{
 }
+ <div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Index">Inicio</a></li>
+    <li class="breadcrumb-item" aria-current="page">Acerca</li>
+    <li class="breadcrumb-item active" aria-current="page">De la Ubicación</li>
+  </ol>
+</nav>
+</div> 
+
+<style>
+
+.map-responsive{
+
+    overflow:hidden;
+
+    padding-bottom:40%;
+
+    position:relative;
+
+    height:0;
+
+}
+
+.map-responsive iframe{
+
+
+
+    height:100%;
+
+    width:100%;
+
+    position:absolute;
+
+}
+
+</style>
+
+    
+
+<div class="map-responsive">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.060941486097!2d-75.59067258474924!3d6.255702227952894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442908d54461e1%3A0x79fe3e746515ac9f!2sUnidad%20Deportiva%20Atanasio%20Girardot!5e0!3m2!1ses!2sco!4v1664611066033!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+ <div><p><strong>Nota: </strong>La dirección es fictia/un ejemplo</p></div>   
